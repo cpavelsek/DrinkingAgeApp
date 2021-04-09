@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DrinkingAge.MainPage">
+
+    <StackLayout RadioButtonGroup.GroupName="countries">
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+        <Label Text="Can You Legally Drink?" FontSize="Title" Padding="30,10,30,10"/>
+
+        <Editor x:Name="Inp_YearBorn"
+                Placeholder="Please enter the year you were born."
+                PlaceholderColor="Blue"
+                Keyboard="Numeric"/>
+
+        <DatePicker x:Name="Inp_Birthday"
+                    Date="03/05/1995"
+                    Format="MM-dd-yyyy"/>
+
+             
+        <Label Text="Please select a country." />
+        <RadioButton Content="USA"
+                     x:Name="USA"
+                     GroupName="countries"
+                     CheckedChanged="HandleCheck"/>
+        <RadioButton Content="Germany"
+                     x:Name="Germany"
+                     GroupName="countries"
+                     CheckedChanged="HandleCheck"/>
+        <RadioButton Content="Japan"
+                     x:Name="Japan"
+                     GroupName="countries"
+                     CheckedChanged="HandleCheck"/>
+        <RadioButton Content="South Africa"
+                     x:Name="SouthAfrica"
+                     GroupName="countries"
+                     CheckedChanged="HandleCheck"/>
+
+        <Button Text="Calculate Drinking Age - Using Date Picker"
+                x:Name="Btn_CaclulateDatePicker"
+                Clicked="CaclulateDatePicker" />
+
+
+        <Label  Text="" x:Name="Lbl_Birthday" />
+
+
+        <Button Text="Calculate Drinking Age"
+                x:Name="Btn_Caclulate"
+                Clicked="Button_Clicked" />
+
+        <Label  Text=" When can you drink?" x:Name="Lbl_DrinkAge" />
+
+    </StackLayout>
+
+</ContentPage>
